@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" >
         <div class="item-info">
           <p class="item-title" v-text="item.title"></p>
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-        title: '银杏湖乐园',
-        desc: '南京游玩首站，银杏湖乐园期待您的到来'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/f4/f455d92ba582f608.water.jpg_200x200_375e5775.jpg',
-        title: '南京汤山颐尚温泉',
-        desc: '南京游玩第二站，汤山颐尚温泉期待您的到来'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1502/e1/e1834f8d1ed57517.water.jpg_200x200_a9e76b67.jpg',
-        title: '南京梅花节',
-        desc: '三月游南京，不可错过的梅花节'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
